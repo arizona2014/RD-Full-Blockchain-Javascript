@@ -1,0 +1,23 @@
+{
+  "name": "rd-full-blockchain-javascript",
+  "version": "1.0.0",
+  "description": "A full Blockchaing application developed in Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arizona2014/RD-Full-Blockchain-Javascript.git"
+  },
+  "keywords": [
+    "blockchaing",
+    "javascript"
+  ],
+  "author": "Andy Lisac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arizona2014/RD-Full-Blockchain-Javascript/issues"
+  },
+  "homepage": "https://github.com/arizona2014/RD-Full-Blockchain-Javascript#readme"
+}
