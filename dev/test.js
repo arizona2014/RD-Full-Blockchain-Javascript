@@ -1,1 +1,1 @@
-testing the blockchain
+const Blockchain = require('./blockchain');
