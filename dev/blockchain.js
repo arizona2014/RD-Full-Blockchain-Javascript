@@ -1,1 +1,4 @@
-something nice will be here
+function Blockchain() {
+  this.chain = [];
+  this.pendingTransactions = [];
+}
