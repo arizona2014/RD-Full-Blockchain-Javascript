@@ -33,6 +33,7 @@ Blockchain.prototype.createNewTransaction = function (amount, sender, recipient)
 
   this.pendingTransactions.push(newTransaction);
 
+  // we return the number of the block the newTransaction will be added to
   return this.getLastBlock()['index'] + 1;
 
 }
