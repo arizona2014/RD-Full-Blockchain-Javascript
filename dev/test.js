@@ -8,5 +8,6 @@ bitcoin.createNewBlock(11,'DZDZDZDZDZ','XSEEDEDED?E');
 bitcoin.createNewTransaction(55, 'ALEXIHDD9DJH9', 'JENXN9JSD9D0D');
 bitcoin.createNewTransaction(1600, 'ALEXIHDD9DJH9', 'JENXN9JSD9D0D');
 bitcoin.createNewTransaction(560, 'ALEXIHDD9DJH9', 'JENXN9JSD9D0D');
+bitcoin.createNewBlock(234,'DZDZDZDZDZ','XSEEDEDEDE');
 
-console.log(bitcoin);
+console.log(bitcoin.chain[2]);
