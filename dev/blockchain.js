@@ -38,12 +38,16 @@ Blockchain.prototype.createNewTransaction = function (amount, sender, recipient)
   // we return the number of the block the newTransaction will be added to
   return this.getLastBlock()['index'] + 1;
 
-}
+};
 
 Blockchain.prototype.hashBlock = function (previousBlockHash, currentBlockData, nonce) {
   const dataAsString = previousBlockHash + nonce.toString() + JSON.stringify(currentBlockData);
   const hash = sha256(dataAsString);
   return hash;
+};
+
+Blockchain.prototype.proofOfWork = function (previousBlockHash, currentBlockData) {
+  
 }
 
 module.exports = Blockchain;
