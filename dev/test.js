@@ -1,13 +1,27 @@
 const Blockchain = require('./blockchain');
-
 const bitcoin = new Blockchain();
-bitcoin.createNewBlock(555,'DSFD5445TLKLJ','JKNE9EJIE?E');
-bitcoin.createNewTransaction(100, 'ALEXIHDD9DJH9', 'JENXN9JSD9D0D');
-bitcoin.createNewBlock(11,'DZDZDZDZDZ','XSEEDEDED?E');
 
-bitcoin.createNewTransaction(55, 'ALEXIHDD9DJH9', 'JENXN9JSD9D0D');
-bitcoin.createNewTransaction(1600, 'ALEXIHDD9DJH9', 'JENXN9JSD9D0D');
-bitcoin.createNewTransaction(560, 'ALEXIHDD9DJH9', 'JENXN9JSD9D0D');
-bitcoin.createNewBlock(234,'DZDZDZDZDZ','XSEEDEDEDE');
+const previousBlockHash = 'SJNDCSDKFSLKFNSDVDSV6FD43KJVNDS';
+const currentBlockData = [
+  {
+    amount: 10,
+    sender: 'LSDKFSDLKFCDSCDSSDFQFS',
+    recipient: 'SDSORIEWREWPORIWERWE'
+  },
+  {
+    amount: 30,
+    sender: 'LSDKFSDLKFCDSCDSSDFQFS',
+    recipient: 'SDSORIEWREWPORIWERWE'
+  },
+  {
+    amount: 330,
+    sender: 'LSDKFSDLKFCDSCDSSDFQFS',
+    recipient: 'SDSORIEWREWPORIWERWE'
+  }
+];
 
-console.log(bitcoin.chain[2]);
+const nonce = 100;
+
+const hash = bitcoin.hashBlock(previousBlockHash,currentBlockData,nonce);
+
+console.log(hash);
