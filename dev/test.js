@@ -20,8 +20,4 @@ const currentBlockData = [
   }
 ];
 
-const nonce = 100;
-
-const hash = bitcoin.hashBlock(previousBlockHash,currentBlockData,nonce);
-
-console.log(hash);
+console.log(bitcoin.proofOfWork(previousBlockHash, currentBlockData));
