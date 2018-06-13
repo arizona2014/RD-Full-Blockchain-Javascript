@@ -20,4 +20,4 @@ const currentBlockData = [
   }
 ];
 
-console.log(bitcoin.proofOfWork(previousBlockHash, currentBlockData));
+console.log(bitcoin);
