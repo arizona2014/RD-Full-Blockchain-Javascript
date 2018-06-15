@@ -3,6 +3,9 @@ var app = express();
 require('dotenv').config();
 const bodyParser = require('body-parser');
 const Blockchain = require('./blockchain');
+const uuid = require('uuid/v1');
+
+const nodeAddress = uuid().split('-').join('');
 
 const bitcoin = new Blockchain();
 
@@ -19,7 +22,28 @@ app.post('/transaction', function (req, res) {
 });
 
 app.get('/mine', function (req, res) {
-  const newBlock = bitcoin.createNewBlock();
+  // Mining process
+  const lastBlock = bitcoin.getLastBlock();
+  const previousHashHash = lastBlock['hash'];
+  const currentBlockData = {
+    transactions: bitcoin.pendingTransactions,
+    index: lastBlock['index'] + 1
+  };
+  const nonce = bitcoin.proofOfWork(previousHashHash, currentBlockData);
+  const blockHash = bitcoin.hashBlock(previousHashHash, currentBlockData, nonce);
+
+  const newBlock = bitcoin.createNewBlock(nonce, previousHashHash, blockHash);
+  // Mining process
+
+  // Rewarding miner for mining new block
+  bitcoin.createNewTransaction(12.5, '00', nodeAddress);
+  // Rewarding miner for mining new block
+
+  res.json({
+    note: "New block mined successfully",
+    block: newBlock
+  });
+
 });
 
 app.listen(process.env.APP_PORT, function() {
