@@ -4,9 +4,9 @@ require('dotenv').config();
 const bodyParser = require('body-parser');
 const Blockchain = require('./blockchain');
 const uuid = require('uuid/v1');
+const port = process.argv[2];
 
 const nodeAddress = uuid().split('-').join('');
-
 const bitcoin = new Blockchain();
 
 app.use(bodyParser.json());
@@ -46,6 +46,6 @@ app.get('/mine', function (req, res) {
 
 });
 
-app.listen(process.env.APP_PORT, function() {
-  console.log('Running API on port -> ', process.env.APP_PORT);
+app.listen(port, function() {
+  console.log(`Running API on port ${port} `);
 });
