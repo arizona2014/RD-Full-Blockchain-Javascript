@@ -46,6 +46,10 @@ app.get('/mine', function (req, res) {
 
 });
 
+app.post('/register-and-broadcast-node', function (req, res) {
+
+})
+
 app.listen(port, function() {
   console.log(`Running API on port ${port} `);
 });
