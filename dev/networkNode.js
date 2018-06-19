@@ -52,9 +52,6 @@ app.post('/register-and-broadcast-node', function (req, res) {
 
   bitcoin.networkNodes.forEach( networkNodeUrl => {
 
-    // register-node
-
-
   });
 
 });
