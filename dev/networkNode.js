@@ -47,6 +47,15 @@ app.get('/mine', function (req, res) {
 });
 
 app.post('/register-and-broadcast-node', function (req, res) {
+  const newNodeUrl = req.body.newNodeUrl;
+  if( bitcoin.networkNodes.indexOf(newNodeUrl) == -1 ) bitcoin.networkNodes.push(newNodeUrl);
+
+  bitcoin.networkNodes.forEach( networkNodeUrl => {
+
+    // register-node
+
+
+  });
 
 });
 
