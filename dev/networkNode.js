@@ -33,7 +33,6 @@ app.get('/mine', function (req, res) {
   const blockHash = bitcoin.hashBlock(previousHashHash, currentBlockData, nonce);
 
   const newBlock = bitcoin.createNewBlock(nonce, previousHashHash, blockHash);
-  // Mining process
 
   // Rewarding miner for mining new block
   bitcoin.createNewTransaction(12.5, '00', nodeAddress);
