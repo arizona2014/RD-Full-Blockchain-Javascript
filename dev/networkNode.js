@@ -37,7 +37,6 @@ app.get('/mine', function (req, res) {
 
   // Rewarding miner for mining new block
   bitcoin.createNewTransaction(12.5, '00', nodeAddress);
-  // Rewarding miner for mining new block
 
   res.json({
     note: "New block mined successfully",
