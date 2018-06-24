@@ -49,13 +49,20 @@ app.post('/register-and-broadcast-node', function (req, res) {
   const newNodeUrl = req.body.newNodeUrl;
   if( bitcoin.networkNodes.indexOf(newNodeUrl) == -1 ) bitcoin.networkNodes.push(newNodeUrl);
 
+  const registerNodesPromises = [];
   bitcoin.networkNodes.forEach( networkNodeUrl => {
     const requestOptions = {
       uri: networkNodeUrl + '/register-node',
       method: 'POST',
       body: { newNodeUrl: networkNodeUrl },
       json: true
-    }
+    };
+    registerNodesPromises.push(rp(requestOptions));
+  });
+
+  Promise.all(registerNodesPromises)
+  .then( data => {
+
   });
 
 });
