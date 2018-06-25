@@ -11,7 +11,7 @@ function Blockchain() {
   this.createNewBlock(100, '0', '0');
 }
 
-// Function respobsible for creating a new block in the chain
+// Function responsible for creating a new block in the chain
 Blockchain.prototype.createNewBlock = function(nonce, previousBlockHash, hash) {
   const newBlock = {
     index: this.chain.length + 1,
@@ -33,6 +33,7 @@ Blockchain.prototype.getLastBlock = function () {
   return this.chain[this.chain.length - 1];
 };
 
+// Function that creates a new transaction and pushes to the pendingTransaction array of the chain
 Blockchain.prototype.createNewTransaction = function (amount, sender, recipient) {
   const newTransaction = {
     amount: amount,
@@ -42,7 +43,7 @@ Blockchain.prototype.createNewTransaction = function (amount, sender, recipient)
 
   this.pendingTransactions.push(newTransaction);
 
-  // we return the number of the block the newTransaction will be added to
+  // returns the number of the block the newTransaction will be added to
   return this.getLastBlock()['index'] + 1;
 
 };
