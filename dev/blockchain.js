@@ -1,6 +1,8 @@
 const sha256 = require('sha256');
 const currentNodeUrl = process.argv[3];
 
+
+// This is the Blockchain main object
 function Blockchain() {
   this.chain = [];
   this.pendingTransactions = [];
