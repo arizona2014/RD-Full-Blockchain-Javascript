@@ -65,7 +65,7 @@ app.post('/register-and-broadcast-node', function (req, res) {
     const  bulkRegisterOptions = {
       uri: newNodeUrl + '/register-nodes-bulk',
       method: 'POST',
-      body: { allNetworkNodes: [ ...bitcoin.networkNodes, bitcoin.currentNodeUrl ] }
+      body: { allNetworkNodes: [ ...bitcoin.networkNodes, bitcoin.currentNodeUrl ] },
       json: true
     };
 
@@ -79,7 +79,8 @@ app.post('/register-and-broadcast-node', function (req, res) {
 });
 
 app.post('/register-node', function (req, res) {
-
+  const newNodeUrl = req.body.newNodeUrl;
+  bitcoin.networkNodes.push(newNodeUrl);
 });
 
 app.post('/register-nodes-bulk', function (req, res) {
